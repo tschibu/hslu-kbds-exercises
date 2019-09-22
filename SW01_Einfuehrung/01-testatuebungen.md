@@ -8,19 +8,18 @@ Lesen sie folgenden Artikel und schauen sie das dazugehörige Video.
 
 **Beantworten sie anschliessend dazu die Fragen:**
 
-1. Was soll mit der Applikation realisiert werden, bzw. welcher Mehrwert
-entsteht aus deren Einsatz?
+1. Was soll mit der Applikation realisiert werden, bzw. welcher Mehrwert entsteht aus deren Einsatz?
 
-asdasd
+Die beiden digitalen Avatare ("Cobots") sollen alls "Knowhow-Konserven" intelligent auf den Gesprächsverlauf eingehen und Fragen beantworten können. Sie unterstützen Menschen bei ihrer Arbeit und können so die Effizienz steigern.
 
 
 2. Welches Wissen ist für die Entscheidungsfindung relevant?
 
-asdasd
+* Wissen über Bankgeschäfte
 
 
-3. Welche Komplexitäten bestehen die den Einsatz solch einer
-Applikation rechtfertigen?
+
+3. Welche Komplexitäten bestehen, die den Einsatz solch einer Applikation rechtfertigen?
 
 asdas
 
@@ -30,8 +29,7 @@ asdas
 asdasd
 
 
-5. Gibt es Restriktionen die bei der Wahl der Daten & Datenquellen
-berücksichtigt werden müssen?
+5. Gibt es Restriktionen die bei der Wahl der Daten & Datenquellen berücksichtigt werden müssen?
 
 asdasd
 
