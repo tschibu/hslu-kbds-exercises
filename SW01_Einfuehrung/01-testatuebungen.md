@@ -3,7 +3,7 @@
 Lesen sie folgenden Artikel und schauen sie das dazugehörige Video.
 
 * [Finews: UBS: Macher von «Herr der Ringe» digitalisieren Chefökonom](https://www.finews.ch/news/banken/32399-ubs-macher-von-herr-der-ringe-digitalisieren-schweizer-chefoekonomen)
-* [Finews: UBS: Macher von «Herr der Ringe» digitalisieren Chefökonom](https://www.ubs.com/magazines/innovation/en/wealth-innovation-lab/beta.html)
+* [Video zum UBS Companion](https://www.ubs.com/magazines/innovation/en/wealth-innovation-lab/beta.html)
 
 
 **Beantworten sie anschliessend dazu die Fragen:**
