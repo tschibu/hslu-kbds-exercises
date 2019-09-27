@@ -5,7 +5,7 @@ DATE=-V date="`date +'%Y-%m-%d'`"
 all: clean pdf
 
 pdf: *.md
-	pandoc $(PDFPARAMS) $(FONTS) $(DATE) *.md -o gruppe_01_sw01_einfuehrung.pdf
+	pandoc $(PDFPARAMS) $(FONTS) $(DATE) *.md -o gruppe_01_sw02_knowledge_representation.pdf
 	
 clean:
-	rm -f gruppe_01_sw01_einfuehrung.pdf
+	rm -f gruppe_01_sw02_knowledge_representation.pdf
