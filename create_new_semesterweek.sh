@@ -35,7 +35,6 @@ with open(param_file, 'r') as file :
 
 # Replace the target string
 filedata = filedata.replace('01_einfuehrung', param_replace)
-print(type(filedata))
 
 # Write the file out again
 with open(param_file, 'w') as file :
@@ -61,3 +60,5 @@ filedata = filedata.replace('SW01', param_replace)
 with open(param_file, 'w') as file :
     file.write(filedata)
 " SW${SEMESTERWEEK} ${FOLDERNAME}/${METAFILE}
+
+echo "# Testatübung SW${SEMESTERWEEK}" > ${FOLDERNAME}/01-testatuebungen.md
