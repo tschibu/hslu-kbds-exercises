@@ -6,6 +6,6 @@ all: clean pdf
 
 pdf: *.md
 	pandoc $(PDFPARAMS) $(FONTS) $(DATE) *.md -o gruppe_01_sw01_einfuehrung.pdf
-
+	
 clean:
 	rm -f gruppe_01_sw01_einfuehrung.pdf
