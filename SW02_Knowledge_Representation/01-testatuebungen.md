@@ -7,9 +7,9 @@
 
 ## Aufgabe 2
 
-*Anwendungsfall für Knowledge Graphs*
+### Anwendungsfall für Knowledge Graphs
 
-Analyse von eigenem Streaming-Server
+*Analyse von eigenem Streaming-Server*
 
 ```
 Eine Person X betreibt einen eigenen Streamingserver und erstellt Accounts für Kollegen. Die Daten die dabei entstehen können mithilfe
@@ -29,7 +29,7 @@ Folgende Daten sind interessant:
     * Schauspieler von dem Film
     * Internationales Ranking (IMDB)
 
-*Resultierenden Vorteile*
+### Resultierenden Vorteile
 
 Durch einen Knowledge Graph können die folgenden Punkte analysiert werden:
 
@@ -38,3 +38,7 @@ Durch einen Knowledge Graph können die folgenden Punkte analysiert werden:
 * Welche Schauspieler werden gerne gesehen?
 * Welche Relationen unter den Kollegen gibt es?
 * Interessen Aufteilung anhand der Benutzer Attribute?
+
+Somit kann zum Beispiel im vornherein analysiert werden von wem ein Film vermutlich geschaut wird
+und somit können die Prioritäten besser gesetzt werden. Ausserdem können mit den Daten
+die Bandbreite und die Zeit für Wartungsarbeiten besser definiert werden.
