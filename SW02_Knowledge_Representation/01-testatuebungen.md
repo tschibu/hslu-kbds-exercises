@@ -3,7 +3,7 @@
 
 ## Aufgabe 1
 
-@Serge
+![alt text](rdf_diagram.png "RDF Diagramm")
 
 ## Aufgabe 2
 
