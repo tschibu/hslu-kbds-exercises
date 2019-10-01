@@ -9,23 +9,32 @@
 
 *Anwendungsfall für Knowledge Graphs*
 
-Filmanalyse von eigenem Streamingserver
+Analyse von eigenem Streaming-Server
 
 ```
-Eine Person X betreibt ein eigenem Streamingserver und erstelle Account für seine Kollegen. Mit einer Analyse können die Gerne-Style analysiert werden.
+Eine Person X betreibt einen eigenen Streamingserver und erstellt Accounts für Kollegen. Die Daten die dabei entstehen können mithilfe
+eines Knowledge Graph modeliert werden. Zusätlich wäre es interessant gewisse Attribute der Kollegen mit einzubinden.
+Folgende Daten sind interessant:
 ```
-
 
 * Benutzer
-* Filmportfolio
-* Gerne von dem Film
-* Schauspieler von dem Film
-* Internationales Ranking (IMDB)
-
+    * Alter
+    * Beruf
+    * Zivilstand
+    * Geschlecht
+    * Herkunft
+* Film Portfolio
+    * Genre von dem Film
+    * Inhalt / Handlung
+    * Schauspieler von dem Film
+    * Internationales Ranking (IMDB)
 
 *Resultierenden Vorteile*
 
-Durch einen Knowledge Graph kann analyisert werden, welche Personen den gleichen Filmgeschmack hat.
+Durch einen Knowledge Graph können die folgenden Punkte analysiert werden:
 
-* Filme der Person X, von der ich weiss, das die Person die gleiche Filmgeschmack hat.
-* 
+* Welche Genre sind beliebt?
+* Welche Handlungen sind beliebt?
+* Welche Schauspieler werden gerne gesehen?
+* Welche Relationen unter den Kollegen gibt es?
+* Interessen Aufteilung anhand der Benutzer Attribute?
