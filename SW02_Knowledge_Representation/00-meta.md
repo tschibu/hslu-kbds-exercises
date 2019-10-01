@@ -1,5 +1,5 @@
 ---
 title: SW02 - Gruppe 1
-subtitle: Einführung
+subtitle: Knowledge Representation
 author: M. Nebroj, S. Hauri, S. Ineichen, R. Schwarzentruber
 ---
