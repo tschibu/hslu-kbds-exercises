@@ -1,3 +1,9 @@
+---
+header-includes:
+ - \usepackage{fvextra}
+ - \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+---
+
 # Testatübung SW03
 
 ## Aufgabe 0 - Installations Hinweis
@@ -20,13 +26,13 @@ nltk.download('wordnet')
 ## Aufgabe 1 - Tokenizieren
 
 Tokenizieren sie folgenden Text:
-```
+```bash
 When Alexander Graham Bell invented the telephone he had three missed calls from Chuck Norris.
 ```
 
 ### Output
 
-```
+```bash
 ['When', 'Alexander', 'Graham', 'Bell', 'invented', 'the', 'telephone', 'he', 'had', 'three', 'missed', 'calls', 'from', 'Chuck', 'Norris', '.']
 ```
 
@@ -44,7 +50,7 @@ def exercice_01():
 Entfernen sie die Stop Words aus dem tokenizierten Text.
 
 ### Screenshot
-```
+```bash
 ['When', 'Alexander', 'Graham', 'Bell', 'invented', 'the', 'telephone', 'he', 'had', 'three', 'missed', 'calls', 'from', 'Chuck', 'Norris', '.']
 ['When', 'Alexander', 'Graham', 'Bell', 'invented', 'telephone', 'three', 'missed', 'calls', 'Chuck', 'Norris', '.']
 ```
@@ -71,7 +77,7 @@ Führen sie auf dem gleichen Text Stemming und Lemmatization aus. (Welche Probel
 
 ### Screenshot
 
-```
+```bash
 Stem When Alexander Graham Bell invented the telephone he had three missed calls from Chuck Norris.: when alexander graham bell invented the telephone he had three missed calls from chuck norris.
 
 Lemmatise When Alexander Graham Bell invented the telephone he had three missed calls from Chuck Norris.: When Alexander Graham Bell invented the telephone he had three missed calls from Chuck Norris.
