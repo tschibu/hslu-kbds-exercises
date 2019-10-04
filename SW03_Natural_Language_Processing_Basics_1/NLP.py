@@ -93,5 +93,29 @@ def wort_stemming_and_lemmatization():
     print("Stem %s: %s" % ((wort), stemmer.stem((wort))))
     print("Lemmatise %s: %s" % ((wort), lemmatiser.lemmatize((wort))))
 
+def exercice_01():
+    exercice_01_text = "When Alexander Graham Bell invented the telephone he had three missed calls from Chuck Norris."
+    token_wort = tokenize.word_tokenize(exercice_01_text) 
+    print(token_wort)
+    return token_wort
+
+def exercice_02():
+    stop_words = set(stopwords.words('english'))
+    filtered_sentence = []
+
+    for w in exercice_01():
+        if w not in stop_words:
+            filtered_sentence.append(w)
+    print(filtered_sentence)
+
+def exercice_03():
+    stemmer = PorterStemmer()
+    lemmatiser = WordNetLemmatizer()
+    exercice_03_text = "When Alexander Graham Bell invented the telephone he had three missed calls from Chuck Norris."
+    print("Stem %s: %s" % ((exercice_03_text), stemmer.stem((exercice_03_text))))
+    print("Lemmatise %s: %s" % ((exercice_03_text), lemmatiser.lemmatize((exercice_03_text))))
+
 if __name__ == "__main__":
-    main()
+    # exercice_01()
+    # exercice_02()
+    exercice_03()
