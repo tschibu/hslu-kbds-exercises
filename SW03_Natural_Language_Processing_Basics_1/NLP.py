@@ -93,29 +93,42 @@ def wort_stemming_and_lemmatization():
     print("Stem %s: %s" % ((wort), stemmer.stem((wort))))
     print("Lemmatise %s: %s" % ((wort), lemmatiser.lemmatize((wort))))
 
-def exercice_01():
-    exercice_01_text = "When Alexander Graham Bell invented the telephone he had three missed calls from Chuck Norris."
-    token_wort = tokenize.word_tokenize(exercice_01_text) 
+def exercise_01():
+    exercise_01_text = "When Alexander Graham Bell invented the telephone he had three missed calls from Chuck Norris."
+    token_wort = tokenize.word_tokenize(exercise_01_text) 
     print(token_wort)
     return token_wort
 
-def exercice_02():
+def exercise_02():
     stop_words = set(stopwords.words('english'))
     filtered_sentence = []
 
-    for w in exercice_01():
+    for w in exercise_01():
         if w not in stop_words:
             filtered_sentence.append(w)
     print(filtered_sentence)
 
-def exercice_03():
+def exercise_03():
     stemmer = PorterStemmer()
     lemmatiser = WordNetLemmatizer()
-    exercice_03_text = "When Alexander Graham Bell invented the telephone he had three missed calls from Chuck Norris."
-    print("Stem %s: %s" % ((exercice_03_text), stemmer.stem((exercice_03_text))))
-    print("Lemmatise %s: %s" % ((exercice_03_text), lemmatiser.lemmatize((exercice_03_text))))
+    exercise_03_text = "When Alexander Graham Bell invented the telephone he had three missed calls from Chuck Norris."
+    exercise_03_tokens = tokenize.word_tokenize(exercise_03_text)
+    print("Stem: {}".format([stemmer.stem(token) for token in exercise_03_tokens]))
+    print("Lemmatise {}".format([lemmatiser.lemmatize(token) for token in exercise_03_tokens]))
 
 if __name__ == "__main__":
-    # exercice_01()
-    # exercice_02()
-    exercice_03()
+    # exercise_01()
+    # exercise_02()
+    # exercise_03()
+    text = "When Alexander Graham Bell invented the telephone he had three missed calls from Chuck Norris."
+    tokens = tokenize.word_tokenize(text)
+    print(tokens)
+    stop_words = set(stopwords.words('english'))
+    tokens_no_stopwords = [word for word in tokens if word not in stop_words]
+    print(tokens_no_stopwords)
+    stemmer = PorterStemmer()
+    stemmed_words = [stemmer.stem(word) for word in tokens]
+    print(stemmed_words)
+    lemmatizer = WordNetLemmatizer()
+    lemmatized_words = [lemmatizer.lemmatize(word) for word in tokens]
+    print(lemmatized_words)

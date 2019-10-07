@@ -6,90 +6,83 @@ header-includes:
 
 # Testatübung SW03
 
-## Aufgabe 0 - Installations Hinweis
-
-```bash
-export NLTK_DATA=~/Documents/Studium.Local/KBDS/nltk_data
-```
-
-Packages:
-```python
-import nltk
-nltk.download('punkt')
-nltk.download('averaged_perceptron_tagger')
-nltk.download('maxent_ne_chunker')
-nltk.download('words')
-nltk.download('stopwords')
-nltk.download('wordnet')
-```
-
 ## Aufgabe 1 - Tokenizieren
 
 Tokenizieren sie folgenden Text:
-```bash
-When Alexander Graham Bell invented the telephone he had three missed calls from Chuck Norris.
-```
 
-### Output
-
-```bash
-['When', 'Alexander', 'Graham', 'Bell', 'invented', 'the', 'telephone', 'he', 'had', 'three', 'missed', 'calls', 'from', 'Chuck', 'Norris', '.']
+```python
+text = "When Alexander Graham Bell invented the telephone he had three missed calls from Chuck Norris."
 ```
 
 ### Code
 
 ```python
-def exercice_01():
-    exercice_01_text = "When Alexander Graham Bell invented the telephone he had three missed calls from Chuck Norris."
-    token_wort = tokenize.word_tokenize(exercice_01_text) 
-    print(token_wort)
+from nltk import tokenize
+tokens = tokenize.word_tokenize(text)
+print(tokens)
+```
+
+### Output
+
+```python
+['When', 'Alexander', 'Graham', 'Bell', 'invented', 'the', 'telephone', 'he', 'had', 'three', 'missed', 'calls', 'from', 'Chuck', 'Norris', '.']
 ```
 
 ## Aufgabe 2 - Stop Words
 
 Entfernen sie die Stop Words aus dem tokenizierten Text.
 
-### Screenshot
-```bash
-['When', 'Alexander', 'Graham', 'Bell', 'invented', 'the', 'telephone', 'he', 'had', 'three', 'missed', 'calls', 'from', 'Chuck', 'Norris', '.']
-['When', 'Alexander', 'Graham', 'Bell', 'invented', 'telephone', 'three', 'missed', 'calls', 'Chuck', 'Norris', '.']
-```
-
 ### Code
 
 ```python
-def exercice_02():
-    stop_words = set(stopwords.words('english'))
-    filtered_sentence = []
+from nltk.corpus import stopwords
+stop_words = set(stopwords.words('english'))
+tokens_no_stopwords = [word for word in tokens if word not in stop_words]
+print(tokens_no_stopwords)
+```
 
-    for w in exercice_01():
-        if w not in stop_words:
-            filtered_sentence.append(w)
-    print(filtered_sentence)
+### Output
+
+```python
+['When', 'Alexander', 'Graham', 'Bell', 'invented', 'telephone', 'three', 'missed', 'calls', 'Chuck', 'Norris', '.']
 ```
 
 ## Aufgabe 3 - Stemming / Lemmatization
 
-Führen sie auf dem gleichen Text Stemming und Lemmatization aus. (Welche Probelmatik entdecken sie in den Resultaten?)
+Führen sie auf dem gleichen Text Stemming und Lemmatization aus. (Welche Problematik entdecken sie in den Resultaten?)
 
-* Problem A
-* Problem B
+### Code
 
-### Screenshot
+```python
+from nltk.stem import PorterStemmer
+stemmer = PorterStemmer()
+stemmed_words = [stemmer.stem(word) for word in tokens]
+print(stemmed_words)
+```
 
-```bash
-Stem When Alexander Graham Bell invented the telephone he had three missed calls from Chuck Norris.: when alexander graham bell invented the telephone he had three missed calls from chuck norris.
+### Output
 
-Lemmatise When Alexander Graham Bell invented the telephone he had three missed calls from Chuck Norris.: When Alexander Graham Bell invented the telephone he had three missed calls from Chuck Norris.
+```python
+['when', 'alexand', 'graham', 'bell', 'invent', 'the', 'telephon', 'he', 'had', 'three', 'miss', 'call', 'from', 'chuck', 'norri', '.']
 ```
 
 ### Code
 
 ```python
-def exercice_03():
-    stemmer = PorterStemmer()
-    lemmatiser = WordNetLemmatizer()
-    exercice_03_text = "When Alexander Graham Bell invented the telephone he had three missed calls from Chuck Norris."
-    print("Stem %s: %s" % ((exercice_03_text), stemmer.stem((exercice_03_text))))
-    print("Lemmatise %s: %s" % ((exercice_03_text), lemmatiser.lemmatize((exercice_03_text))))
+from nltk.stem import WordNetLemmatizer
+lemmatizer = WordNetLemmatizer()
+lemmatized_words = [lemmatizer.lemmatize(word) for word in tokens]
+print(lemmatized_words)
 ```
+
+### Output
+
+```python
+['When', 'Alexander', 'Graham', 'Bell', 'invented', 'the', 'telephone', 'he', 'had', 'three', 'missed', 'call', 'from', 'Chuck', 'Norris', '.']
+```
+
+### Problematik
+
+Stemming schneidet oft unnötigerweise Endungen weg, sodass Wörter verfälscht werden; wie zum Beispiel bei den Namen "alexand" und "norri".
+
+Lemmatization dagegen ist zu konservativ; in dem Beispielsatz wird nur ein Wort reduziert. Der eigentlich erwünschte Nutzen bleibt dadurch eher gering.
