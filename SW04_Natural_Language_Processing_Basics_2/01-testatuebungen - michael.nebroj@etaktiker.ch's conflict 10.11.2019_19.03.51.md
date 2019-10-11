@@ -45,7 +45,7 @@ token_clean = [w for w in macbeth_ohne_satzzeichen if not w in stop_words]
 ```
 
 ### Code - Bigrams
-
+```python
 # Bigrams definieren
 listBigrams = nltk.bigrams(token_clean)
 
@@ -56,6 +56,7 @@ print("\n\nBigrams: \n")
 for k,v in fdist.most_common():
     if v > 8:
         print (k,v)
+```
 
 ### Output - Bigrams
 
@@ -153,8 +154,9 @@ def get_tfidf(docs, ngram_range=(1,1), index=None):
 print('\n\nTF-IDF: \n')
 print(get_tfidf(documents, ngram_range=(1,1), index=document_names))
 ```
+\pagebreak
 
-### Output
+### Output - TF-IDF
 
 ```python
 TF-IDF:
