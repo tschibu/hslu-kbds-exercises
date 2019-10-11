@@ -39,7 +39,7 @@ listBigrams = nltk.bigrams(token_clean)
 freq_bi = nltk.FreqDist(listBigrams)
 
 fdist = nltk.FreqDist(freq_bi)
-print("\n \n Bigrams: \n")
+print("\n\nBigrams: \n")
 for k,v in fdist.most_common():
     if v > 8:
         print (k,v)
@@ -50,10 +50,34 @@ listTrigrams = nltk.trigrams(token_clean)
 freq_tri = nltk.FreqDist(listTrigrams)
 
 fdist = nltk.FreqDist(freq_tri)
-print("\n \n Trigrams: \n")
+print("\n\nTrigrams: \n")
 for k,v in fdist.most_common():
     if v > 2:
         print (k,v)
 
-
 ## Exercise 2
+
+import numpy as np
+import pandas as pd
+
+from sklearn.feature_extraction.text import TfidfVectorizer
+
+imdb_1 = open('IMDB_1.txt', 'r').readline()
+imdb_2  = open('IMDB_2.txt', 'r').readline()
+imdb_3  = open('IMDB_2.txt', 'r').readline()
+
+documents = [
+    imdb_1,
+    imdb_2,
+    imdb_3
+]
+
+document_names = ['IMDB {:d}'.format(i+1) for i in range(len(documents))]
+
+def get_tfidf(docs, ngram_range=(1,1), index=None):
+    vect = TfidfVectorizer(stop_words='english', ngram_range=ngram_range)
+    tfidf = vect.fit_transform(documents).todense()
+    return pd.DataFrame(tfidf, columns=vect.get_feature_names(), index=index).T
+
+print('\n\nTF-IDF: \n')
+print(get_tfidf(documents, ngram_range=(1,1), index=document_names))
