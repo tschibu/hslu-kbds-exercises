@@ -8,7 +8,7 @@ header-includes:
 
 ## Aufgabe 1 - N-Grams
 
-Identifiziert die Bi- und Trigrams aus 'shakespeare-macbeth.txt'. Dieses Buch ist Teil des Gutenberg Corpus. Der Datensatz muss zunächst bereinigt werden (Stop Words, Satzzeichen, etc.)
+Identifiziert die Bi- und Trigrams aus `shakespeare-macbeth.txt`. Dieses Buch ist Teil des Gutenberg Corpus. Der Datensatz muss zunächst bereinigt werden (Stop Words, Satzzeichen, etc.)
 
 ### Code - Vorbereitung
 
@@ -78,7 +78,7 @@ Bigrams:
 
 ### Code - Trigrams
 
-# Trigrams definieren
+### Trigrams definieren
 ```python
 listTrigrams = nltk.trigrams(token_clean)
 
@@ -120,9 +120,9 @@ Trigrams:
 ('Enter', 'Malcolme', 'Seyward') 3
 ```
 
-## Aufgabe 2 - TF-IDF
+## Aufgabe 2 - TF-IDF Wert der Bigrams
 
-Berechnet den TF-IDF Wert der Unigrams aus den Dokumenten IMDB_1.txt, IMDB_2.txt, IMDB_3.txt
+Berechnet den TF-IDF Wert der Bigrams aus den Dokumenten IMDB_1.txt, IMDB_2.txt, IMDB_3.txt
 
 ### Code
 
@@ -146,46 +146,33 @@ documents = [
 
 document_names = ['IMDB {:d}'.format(i+1) for i in range(len(documents))]
 
-def get_tfidf(docs, ngram_range=(1,1), index=None):
+def get_tfidf(docs, ngram_range=(1,2), index=None):
     vect = TfidfVectorizer(stop_words='english', ngram_range=ngram_range)
     tfidf = vect.fit_transform(documents).todense()
     return pd.DataFrame(tfidf, columns=vect.get_feature_names(), index=index).T
 
 print('\n\nTF-IDF: \n')
-print(get_tfidf(documents, ngram_range=(1,1), index=document_names))
+print(get_tfidf(documents, ngram_range=(1,2), index=document_names))
 ```
 \pagebreak
 
 ### Output - TF-IDF
 
 ```python
-TF-IDF:
+TF-IDF: 
 
-                 IMDB 1    IMDB 2    IMDB 3
-alive          0.267261  0.000000  0.000000
-bridge         0.000000  0.288675  0.288675
-coma           0.267261  0.000000  0.000000
-communication  0.000000  0.288675  0.288675
-communities    0.000000  0.288675  0.288675
-construction   0.000000  0.288675  0.288675
-deputy         0.267261  0.000000  0.000000
-facilitate     0.000000  0.288675  0.288675
-forces         0.000000  0.288675  0.288675
-gravely        0.000000  0.288675  0.288675
-grimes         0.267261  0.000000  0.000000
-group          0.267261  0.000000  0.000000
-injured        0.000000  0.288675  0.288675
-join           0.000000  0.288675  0.288675
-lead           0.267261  0.000000  0.000000
-learn          0.267261  0.000000  0.000000
-restore        0.000000  0.288675  0.288675
-rick           0.267261  0.000000  0.000000
-ruins          0.267261  0.000000  0.000000
-sheriff        0.267261  0.000000  0.000000
-site           0.000000  0.288675  0.288675
-stay           0.267261  0.000000  0.000000
-survivors      0.267261  0.000000  0.000000
-trade          0.000000  0.288675  0.288675
-wakes          0.267261  0.000000  0.000000
-world          0.267261  0.000000  0.000000
+                   IMDB 1    IMDB 2    IMDB 3
+alive            0.150004  0.000000  0.000000
+and              0.088595  0.122451  0.122451
+and must         0.150004  0.000000  0.000000
+and trade        0.000000  0.157678  0.157678
+at               0.000000  0.157678  0.157678
+...                   ...       ...       ...
+wakes up         0.150004  0.000000  0.000000
+will             0.000000  0.157678  0.157678
+will facilitate  0.000000  0.157678  0.157678
+world            0.150004  0.000000  0.000000
+world is         0.150004  0.000000  0.000000
+
+[82 rows x 3 columns]
 ```

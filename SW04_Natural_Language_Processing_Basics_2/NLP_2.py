@@ -63,8 +63,8 @@ import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 imdb_1 = open('IMDB_1.txt', 'r').readline()
-imdb_2  = open('IMDB_2.txt', 'r').readline()
-imdb_3  = open('IMDB_2.txt', 'r').readline()
+imdb_2 = open('IMDB_2.txt', 'r').readline()
+imdb_3 = open('IMDB_2.txt', 'r').readline()
 
 documents = [
     imdb_1,
@@ -74,10 +74,19 @@ documents = [
 
 document_names = ['IMDB {:d}'.format(i+1) for i in range(len(documents))]
 
-def get_tfidf(docs, ngram_range=(1,1), index=None):
+def get_tfidf(docs, ngram_range=(1,2), index=None):
     vect = TfidfVectorizer(stop_words='english', ngram_range=ngram_range)
     tfidf = vect.fit_transform(documents).todense()
     return pd.DataFrame(tfidf, columns=vect.get_feature_names(), index=index).T
 
+def get_tfidf2(docs, ngram_range=(1,2), index=None):
+    vect = TfidfVectorizer(ngram_range=ngram_range)
+    tfidf = vect.fit_transform(documents).todense()
+    return pd.DataFrame(tfidf, columns=vect.get_feature_names(), index=index).T
+
+
 print('\n\nTF-IDF: \n')
-print(get_tfidf(documents, ngram_range=(1,1), index=document_names))
+print(get_tfidf(documents, ngram_range=(1,2), index=document_names))
+
+print('\n\nTF-IDF2: \n')
+print(get_tfidf2(documents, ngram_range=(1,2), index=document_names))
