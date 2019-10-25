@@ -1,8 +1,16 @@
+import os
+import sys
 import gensim
 from nltk.data import find
 
-word2vec_sample = str(find('models/word2vec_sample/pruned.word2vec.txt'))
-model = gensim.models.KeyedVectors.load_word2vec_format(word2vec_sample, binary=False)
+root_dir = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
+got_model = os.path.join(root_dir, "data", "models", "GOT-vectors.w2v")
+
+if not os.path.exists(got_model):
+    print("FATAL: GOT-vectors.w2v not found - please run Aufgabe_01.py from SW05 first to generate the model!")
+    sys.exit(1)
+
+model = gensim.models.Word2Vec.load(got_model)
 
 import numpy as np
 labels = []
@@ -10,7 +18,7 @@ count = 0
 max_count = 50
 X = np.zeros(shape=(max_count, len(model['dog'])))
 
-for term in model.vocab:
+for term in model.wv.vocab:
     X[count] = model[term]
     labels.append(term)
     count += 1
