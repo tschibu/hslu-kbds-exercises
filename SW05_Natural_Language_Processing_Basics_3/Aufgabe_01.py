@@ -23,8 +23,9 @@ class MySentences(object):
                     self.sentence_count += 1
                     yield simple_preprocess(sentence) # tokenization, lowercasing ect... => retrun a list o
 
-
-sentences = MySentences('data')
+parent_dir = os.path.dirname(os.path.realpath(__file__))
+data_path = os.path.join(os.path.dirname(parent_dir), 'data', 'got')
+sentences = MySentences(data_path)
 
 model = Word2Vec(sg=1, # 1 for skip-gram; otherwise CBOW
                  size=300, # num of features
