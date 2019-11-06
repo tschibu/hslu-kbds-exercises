@@ -80,14 +80,14 @@ Konzeptextraktion vornehmen? (Vorgehen kurz erläutern)
 
 #### Idee / Vorgehen
 
-Um die genutzten Waffen in GoT herauszufinden wäre es sinnvoll zuerst Verben bei dem Waffen genutzt werden zu definieren.
-Zum Beispiel: "X tötet Z mit Y" wobei Y die Waffe ist. Bei diesem simplen Beispiel wäre sicherlich "töten" interessant.
-Weitere Verben könnten zum Beispiel schlagen, tragen oder würgen sein.
+Um die genutzten Waffen in Game of Thrones (GoT) herauszufinden, wäre es sinnvoll, zuerst die Verben, welche in dem Kontext
+einer Waffen genutzt werden, zu definieren. Zum Beispiel: _"X tötet Z mit Y"_ wobei in diesem Satz _Y_ die Waffe ist. Bei diesem
+simplen Beispiel ist das Verb _"töten"_ interessant. Weitere Verben könnten zum Beispiel _schlagen_, _tragen_ oder _würgen_ sein.
 Die Verben fungieren dann als Features um eine Graph Database zu durchsuchen.
-Dabei können alle Knoten die keine Kanten zu einem der definierten Verben haben gelöscht werden.
+Dabei können alle Knoten, die keine Kanten zu einem der definierten Verben haben, gelöscht werden.
 Somit würde man einen Graph erhalten indem die Waffen ersichtlich sind. Dieses Verfahren hat natürlich auch Probleme,
 weil gewisse Verben auch in einem anderen Kontext Sinn machen.
 Nützlich wäre es noch den Graphen mit einer Waffen Datenbank abzugleichen um den Graphen weiter zu filtern.
-Zusätzlich könnte man versuchen noch eine relation zu Personen herzustellen, da Waffen zwischen Personen/Gruppen
-eingesetzt werden (Wie im ersten Beispiel wo X und Z involviert sind). Personen und Gruppen können meist einfach aus Text
+Zusätzlich könnte man versuchen noch eine Relation zu den Personen herzustellen, da Waffen zwischen Personen/Gruppen
+eingesetzt werden (Wie im ersten Beispiel wo _X_ und _Z_ involvierte Personen sind). Personen und Gruppen können meist einfach aus Text
 extrahiert werden.
