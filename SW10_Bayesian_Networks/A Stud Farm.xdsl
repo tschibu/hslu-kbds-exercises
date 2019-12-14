@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- This network was created in GeNIe Academic, which can be used for educational and research purposes only -->
+<smile version="1.0" id="Network2" numsamples="1000" discsamples="10000">
+	<nodes>
+		<cpt id="Alan">
+			<state id="carrier" />
+			<state id="not_carrier" />
+			<probabilities>0.01 0.99</probabilities>
+		</cpt>
+		<cpt id="Ann">
+			<state id="carrier" />
+			<state id="not_carrier" />
+			<probabilities>0.01 0.99</probabilities>
+		</cpt>
+		<cpt id="Betsy">
+			<state id="not_carrier" />
+			<state id="carrier" />
+			<parents>Alan Ann</parents>
+			<probabilities>0.33 0.67 0.5 0.5 0.5 0.5 1 0</probabilities>
+		</cpt>
+		<cpt id="Alice">
+			<state id="carrier" />
+			<state id="not_carrier" />
+			<probabilities>0.01 0.99</probabilities>
+		</cpt>
+		<cpt id="Benny">
+			<state id="not_carrier" />
+			<state id="carrier" />
+			<parents>Alan Alice</parents>
+			<probabilities>0.33 0.67 0.5 0.5 0.5 0.5 1 0</probabilities>
+		</cpt>
+		<cpt id="A1">
+			<state id="carrier" />
+			<state id="not_carrier" />
+			<probabilities>0.01 0.99</probabilities>
+		</cpt>
+		<cpt id="Bill">
+			<state id="not_carrier" />
+			<state id="carrier" />
+			<parents>Ann A1</parents>
+			<probabilities>0.33 0.67 0.5 0.5 0.5 0.5 1 0</probabilities>
+		</cpt>
+		<cpt id="Carl">
+			<state id="not_carrier" />
+			<state id="carrier" />
+			<parents>Betsy Bill</parents>
+			<probabilities>1 0 0.5 0.5 0.5 0.5 0.33 0.67</probabilities>
+		</cpt>
+		<cpt id="A2">
+			<state id="carrier" />
+			<state id="not_carrier" />
+			<probabilities>0.01 0.99</probabilities>
+		</cpt>
+		<cpt id="Bonnie">
+			<state id="not_carrier" />
+			<state id="carrier" />
+			<parents>Ann A2</parents>
+			<probabilities>0.33 0.67 0.5 0.5 0.5 0.5 1 0</probabilities>
+		</cpt>
+		<cpt id="Cecily">
+			<state id="not_carrier" />
+			<state id="carrier" />
+			<parents>Benny Bonnie</parents>
+			<probabilities>1 0 0.5 0.5 0.5 0.5 0.33 0.67</probabilities>
+		</cpt>
+		<cpt id="Dennis">
+			<state id="not_carrier" />
+			<state id="carrier" />
+			<state id="sick" />
+			<parents>Cecily Carl</parents>
+			<probabilities>1 0 0 0.5 0.5 0 0.5 0.5 0 0.25 0.5 0.25</probabilities>
+		</cpt>
+	</nodes>
+	<extensions>
+		<genie version="1.0" app="GeNIe 2.1.1104.0 ACADEMIC" name="A Stud Farm" faultnameformat="nodestate">
+			<node id="Alan">
+				<name>Alan</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>419 229 525 280</position>
+				<barchart active="true" />
+			</node>
+			<node id="Ann">
+				<name>Ann</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>495 62 599 110</position>
+				<barchart active="true" />
+			</node>
+			<node id="Betsy">
+				<name>Betsy</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>514 330 618 378</position>
+				<barchart active="true" />
+			</node>
+			<node id="Benny">
+				<name>Benny</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>326 331 430 379</position>
+				<barchart active="true" />
+			</node>
+			<node id="Alice">
+				<name>Alice</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>273 230 377 278</position>
+				<barchart active="true" />
+			</node>
+			<node id="Bill">
+				<name>Bill</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>715 328 819 376</position>
+				<barchart active="true" />
+			</node>
+			<node id="Carl">
+				<name>Carl</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>623 418 727 466</position>
+				<barchart active="true" />
+			</node>
+			<node id="Bonnie">
+				<name>Bonnie</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>115 231 219 279</position>
+				<barchart active="true" />
+			</node>
+			<node id="Cecily">
+				<name>Cecily</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>227 414 331 462</position>
+				<barchart active="true" />
+			</node>
+			<node id="A1">
+				<name>A1</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>758 61 862 109</position>
+				<barchart active="true" />
+			</node>
+			<node id="A2">
+				<name>A2</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>31 60 135 108</position>
+				<barchart active="true" />
+			</node>
+			<node id="Dennis">
+				<name>Dennis</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>425 505 529 553</position>
+				<barchart active="true" />
+			</node>
+		</genie>
+	</extensions>
+</smile>
