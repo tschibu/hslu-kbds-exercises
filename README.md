@@ -14,4 +14,5 @@ Modul: KBDS (Knowledge-based Decision Support Systems)
     - `Week_06` - Natural Language Processing Basics 4
     - `Week_10` - Bayesian networks
     - `Week_13` - Markov chain
+    - `Week_99` - MEP Preparation
     - `data` - data files
